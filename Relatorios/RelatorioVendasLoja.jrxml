@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RelatorioVendasLoja" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="48694ad0-c929-4ce2-9b1e-345f17b44fde">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     *,
+     tbl_vendasloja.`Id_VendaLoja` AS tbl_vendasloja_Id_VendaLoja,
+     tbl_vendasloja.`Data_Venda` AS tbl_vendasloja_Data_Venda,
+     tbl_vendasloja.`Valor_Venda` AS tbl_vendasloja_Valor_Venda,
+     tbl_cadastroclienteloja.`Nome_Cliente` AS tbl_cadastroclienteloja_Nome_Cliente,
+     tbl_cadastroclienteloja.`Id_ClienteLoja` AS tbl_cadastroclienteloja_Id_ClienteLoja
+FROM
+     `tbl_vendasloja` tbl_vendasloja INNER JOIN `tbl_cadastroclienteloja` tbl_cadastroclienteloja ON tbl_vendasloja.`Id_ClienteLoja` = tbl_cadastroclienteloja.`Id_ClienteLoja`]]>
+	</queryString>
+	<field name="Id_VendaLoja" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Data_Venda" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Valor_Venda" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Id_ClienteLoja" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nome_Cliente" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="54" splitType="Stretch">
+			<rectangle>
+				<reportElement x="31" y="0" width="524" height="50" backcolor="#CCCCCC" uuid="03045da4-0e59-44b0-be1e-edc88f191687"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="31" y="0" width="524" height="50" forecolor="#FF0000" uuid="568471f1-98db-46c4-a46a-22aab7c9a031"/>
+				<textElement textAlignment="Center">
+					<font size="17" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Relatório de Pesquisa de Vendas da Loja]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="0" width="31" height="53" uuid="ccca87f6-7679-4c26-a6ff-f43b48abdefb"/>
+				<imageExpression><![CDATA["C:\\Users\\Pc\\Pictures\\Icones Java\\Logo Relatório.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="22" splitType="Stretch">
+			<rectangle>
+				<reportElement x="378" y="2" width="177" height="20" backcolor="#CCCCCC" uuid="225d099c-9d9b-4647-8886-e5fb2cd5d8cf"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="274" y="2" width="104" height="20" backcolor="#CCCCCC" uuid="2741b7a7-c449-4f54-a42d-1e7c1cb75b7b"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="186" y="2" width="88" height="20" backcolor="#CCCCCC" uuid="eb5bd283-08e6-45d2-9ba9-c0e986498bd4"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="100" y="2" width="86" height="20" backcolor="#CCCCCC" uuid="148ad09c-4b7e-4d07-aea1-5dd2b46dc0c5"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="2" width="100" height="20" backcolor="#CCCCCC" uuid="69721f25-be1c-4305-a243-4e61a5ae867f"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="2" width="100" height="20" uuid="7477980d-8a89-465e-b9a2-e3a6316d3687"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Código da Venda]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="2" width="86" height="20" uuid="6cb212b4-6eb0-4296-ac6b-61e8f635deeb"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data da Venda]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="186" y="2" width="88" height="20" uuid="f667d9c7-e654-4401-9063-490f32e84dcf"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Valor da Venda]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="274" y="2" width="104" height="20" uuid="4de35f7c-e646-40a0-afab-d284c148368d"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Código do Cliente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="378" y="2" width="177" height="20" uuid="8904210e-b744-48d0-8eb8-0f0fd7a36fb5"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nome do Cliente]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="0" width="555" height="1" uuid="2c9cda34-3f8b-40c3-b2db-4ab5001835bc"/>
+			</line>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="35" splitType="Stretch">
+			<rectangle>
+				<reportElement x="378" y="0" width="177" height="20" backcolor="#99FFFF" uuid="bf52576a-49dd-4ecf-956f-9219bb35b7b2"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="274" y="0" width="104" height="20" backcolor="#99FFFF" uuid="af98a9e4-737b-4618-9376-2a775c57daec"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="186" y="0" width="88" height="20" backcolor="#99FFFF" uuid="bce526ff-42d9-4387-8d87-808b58080f5c"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="100" y="0" width="86" height="20" backcolor="#99FFFF" uuid="882aaba8-878a-40cb-b849-e7b24863e8fd"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="0" width="100" height="20" backcolor="#99FFFF" uuid="5a9088c4-2bb0-4ba6-a6bc-bbb31127f34f"/>
+			</rectangle>
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="39753ecc-7676-4437-88f7-914d179d7964"/>
+				<textFieldExpression><![CDATA[$F{Id_VendaLoja}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="0" width="86" height="20" uuid="eb3508c8-51e1-4b84-a22e-2debbe9157a3"/>
+				<textFieldExpression><![CDATA[$F{Data_Venda}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="186" y="0" width="88" height="20" uuid="5e7b289e-3af6-43f1-ae89-718d899b38be"/>
+				<textFieldExpression><![CDATA[$F{Valor_Venda}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="274" y="0" width="104" height="20" uuid="f0ee9033-8427-4590-9f2d-6ded22c2f4c9"/>
+				<textFieldExpression><![CDATA[$F{Id_ClienteLoja}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="378" y="0" width="177" height="20" uuid="5fd04afa-dd4d-4791-ae9f-d06dde7f2949"/>
+				<textFieldExpression><![CDATA[$F{Nome_Cliente}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="34" width="555" height="1" uuid="d52497da-02fa-4b05-ad60-576811d4f77f"/>
+			</line>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="435" y="0" width="120" height="20" backcolor="#99FFFF" uuid="48618651-d20b-4a74-87af-f43d9aafdcd1"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="0" width="435" height="20" backcolor="#CCCCCC" uuid="2837fd65-1567-4ae2-9215-0fb211d7c773"/>
+			</rectangle>
+			<textField>
+				<reportElement x="435" y="0" width="80" height="20" uuid="994da692-a551-4134-8352-d76a4950af84"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="515" y="0" width="40" height="20" uuid="d536f993-7a3b-47cb-91d1-4ea12134eb3b"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="435" height="20" uuid="e8d2882e-7c31-4ce1-93c2-ce9430daff43"/>
+				<textElement textAlignment="Right">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Número de Pag:]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>
